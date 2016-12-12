@@ -209,7 +209,7 @@
 #define MSG_DAC_EEPROM_WRITE                MSG_STORE_EPROM              // "DAC EEPROM Write"
 #define MSG_FILAMENT_CHANGE_HEADER          _UxGT("フィラメントコウカン")              // "CHANGE FILAMENT"
 #define MSG_FILAMENT_CHANGE_OPTION_HEADER   _UxGT("ドウサヲセンタクシテクダサイ")        // "CHANGE OPTIONS:"
-#define MSG_FILAMENT_CHANGE_OPTION_EXTRUDE  "サラニオシダス")                 // "Extrude more"
+#define MSG_FILAMENT_CHANGE_OPTION_EXTRUDE  _UxGT("サラニオシダス")                 // "Extrude more"
 #define MSG_FILAMENT_CHANGE_OPTION_RESUME   _UxGT("プリントサイカイ")                // "Resume print"
 #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("コウカンヲカイシシマス")            // "Wait for start"
 #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("シバラクオマチクダサイ")            // "of the filament"

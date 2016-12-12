@@ -135,7 +135,7 @@
   #define MSG_PREPARE                         _UxGT("UTF8")
   #define MSG_CONTROL                         _UxGT("ASCII")
 
-  //#define MSG_MAIN                            _UxGT(".."
+  //#define MSG_MAIN                            _UxGT("..")
   #define MSG_DISABLE_STEPPERS                STRG_C2_8
   #define MSG_AUTO_HOME                       STRG_C2_9
   #define MSG_SET_HOME_OFFSETS                STRG_C2_a

@@ -138,7 +138,7 @@
 #define MSG_KILLED                          _UxGT("ΤΕΡΜΑΤΙΣΜΟΣ. ")
 #define MSG_STOPPED                         _UxGT("ΔΙΑΚΟΠΗ. ")
 #define MSG_CONTROL_RETRACT                 _UxGT("Ανάσυρση μμ")
-#define MSG_CONTROL_RETRACT_SWAP            _UxGT("Εναλλαγή ανάσυρσης μμ"  //SHORTEN
+#define MSG_CONTROL_RETRACT_SWAP            _UxGT("Εναλλαγή ανάσυρσης μμ")  //SHORTEN
 #define MSG_CONTROL_RETRACTF                _UxGT("Ανάσυρση V")
 #define MSG_CONTROL_RETRACT_ZLIFT           _UxGT("Μεταπήδηση μμ")
 #define MSG_CONTROL_RETRACT_RECOVER         _UxGT("UnRet +mm")
@@ -189,7 +189,7 @@
   #define MSG_INFO_COMPLETED_PRINTS         _UxGT("Completed  ")
   #define MSG_INFO_PRINT_TIME               _UxGT("Total Time ")
 #else
-  #define MSG_INFO_PRINT_COUNT              _UxGT("Prints   _UxGT(")
+  #define MSG_INFO_PRINT_COUNT              _UxGT("Prints   ")
   #define MSG_INFO_COMPLETED_PRINTS         _UxGT("Completed")
   #define MSG_INFO_PRINT_TIME               _UxGT("Duration ")
 #endif
