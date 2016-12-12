@@ -111,7 +111,7 @@ static void
 fontgroup_drawwchar (font_group_t * group, const font_t *fnt_default, wchar_t val, void * userdata, fontgroup_cb_draw_t cb_draw_ram)
 {
     uint8_t buf[2] = {0, 0};
-    font_t * fntpqm = NULL;
+    const font_t * fntpqm = NULL;
 
     TRACE("fontgroup_drawwchar char=%d(0x%X)", (int)val, (int)val);
     buf[0] = (uint8_t)(val & 0x7F);
@@ -190,11 +190,11 @@ struct _uxg_drawu8_data_t {
     unsigned int y;
     unsigned int adv;
     unsigned int max_length; // the max pixel length of the string allowed
-    void * fnt_prev;
+    const void * fnt_prev;
 };
 
 static int
-fontgroup_cb_draw_u8g (void *userdata, font_t *fnt_current, const char *msg)
+fontgroup_cb_draw_u8g (void *userdata, const font_t *fnt_current, const char *msg)
 {
     struct _uxg_drawu8_data_t * pdata = userdata;
 
@@ -327,7 +327,7 @@ uxg_DrawUtf8StrP (u8g_t *pu8g, unsigned int x, unsigned int y, const char *utf8_
 }
 
 static int
-fontgroup_cb_draw_u8gstrlen (void *userdata, font_t *fnt_current, const char *msg)
+fontgroup_cb_draw_u8gstrlen (void *userdata, const font_t *fnt_current, const char *msg)
 {
     struct _uxg_drawu8_data_t * pdata = userdata;
 
