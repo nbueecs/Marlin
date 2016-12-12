@@ -102,7 +102,7 @@ pf_bsearch_r (void *userdata, size_t num_data, pf_bsearch_cb_comp_t cb_comp, voi
     /* 查找合适的位置 */
     if (num_data < 1) {
         *ret_idx = 0;
-        DBGMSG (PFDBG_CATLOG_PF, PFDBG_LEVEL_ERROR, "num_data(%"PRIuSZ") < 1", num_data);
+        DBGMSG (PFDBG_CATLOG_PF, PFDBG_LEVEL_ERROR, "num_data(%" PRIuSZ ") < 1", num_data);
         return -1;
     }
 
