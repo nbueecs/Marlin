@@ -148,7 +148,7 @@
 #define MSG_AUTORETRACT                     _UxGT("AutoRetract")
 #define MSG_FILAMENTCHANGE                  _UxGT("Filament wechseln")
 #define MSG_INIT_SDCARD                     _UxGT("SD-Karte erkennen")  // Manually initialize the SD-card via user interface
-#define MSG_CNG_SDCARD                      _UxGT("SD-Karte getauscht") // SD-card changed by user. For machines with no autocarddetect. Both send "M21")
+#define MSG_CNG_SDCARD                      _UxGT("SD-Karte getauscht") // SD-card changed by user. For machines with no autocarddetect. Both send "M21"
 #define MSG_ZPROBE_OUT                      _UxGT("Sensor ausserhalb")
 #define MSG_BLTOUCH_SELFTEST                _UxGT("BLTouch Test")
 #define MSG_BLTOUCH_RESET                   _UxGT("BLTouch Reset")
