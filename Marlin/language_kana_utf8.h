@@ -31,19 +31,15 @@
 #ifndef LANGUAGE_KANA_UTF_H
 #define LANGUAGE_KANA_UTF_H
 
+#define MAPPER_E382E383
+#define DISPLAY_CHARSET_ISO10646_KANA
+
 // This just to show the potential benefit of unicode.
 // This translation can be improved by using the full charset of unicode codeblock U+30A0 to U+30FF.
-
-// force the generator to use all of chars:
-// _UxGT("。「」゛゜ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾ")
-// _UxGT("タダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマ")
-// _UxGT("ミムメモャヤュユョヨラリルレロワヲンヴヷヺ・ーヽ千万円")
-// _UxGT("､･ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝﾞﾟ")
 
 // 片仮名表示定義
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" ready.")
 #define MSG_SD_INSERTED                     _UxGT("カードガソウニュウサレマシタ")        // "Card inserted"
-//#define MSG_SD_INSERTED                     _UxGT("ｶｰﾄﾞｶﾞｿｳﾆｭｳｻﾚﾏｼﾀ")        // "Card inserted"
 #define MSG_SD_REMOVED                      _UxGT("カードガアリマセン")               // "Card removed"
 #define MSG_LCD_ENDSTOPS                    _UxGT("エンドストップ")                  // "Endstops" // Max length 8 characters
 #define MSG_MAIN                            _UxGT("メイン")                       // "Main"
@@ -87,14 +83,14 @@
 #define MSG_MOVE_10MM                       _UxGT(" 10mm イドウ")                 // "Move 10mm"
 #define MSG_SPEED                           _UxGT("ソクド")                       // "Speed"
 #define MSG_BED_Z                           _UxGT("Zオフセット")                   // "Bed Z"
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" ノズル")                       // "Nozzle"
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" ベッド")                       // "Bed"
+#define MSG_NOZZLE                          _UxGT("ノズル")                       // "Nozzle"
+#define MSG_BED                             _UxGT("ベッド")                       // "Bed"
 #define MSG_FAN_SPEED                       _UxGT("ファンソクド")                    // "Fan speed"
 #define MSG_FLOW                            _UxGT("トシュツリョウ")                   // "Flow"
 #define MSG_CONTROL                         _UxGT("セイギョ")                      // "Control"
-#define MSG_MIN                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" サイテイ") // " Min"
-#define MSG_MAX                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" サイコウ") // " Max"
-#define MSG_FACTOR                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" ファクター") // " Fact"
+#define MSG_MIN                             LCD_STR_THERMOMETER _UxGT(" サイテイ") // " Min"
+#define MSG_MAX                             LCD_STR_THERMOMETER _UxGT(" サイコウ") // " Max"
+#define MSG_FACTOR                          LCD_STR_THERMOMETER _UxGT(" ファクター") // " Fact"
 #define MSG_AUTOTEMP                        _UxGT("ジドウオンドセイギョ")               // "Autotemp"
 #define MSG_ON                              _UxGT("オン ")                         // "On "
 #define MSG_OFF                             _UxGT("オフ ")                         // "Off"
@@ -118,6 +114,10 @@
 #define MSG_YSTEPS                          _UxGT("Ysteps/mm")
 #define MSG_ZSTEPS                          _UxGT("Zsteps/mm")
 #define MSG_ESTEPS                          _UxGT("Esteps/mm")
+#define MSG_E1STEPS                         _UxGT("E1steps/mm")
+#define MSG_E2STEPS                         _UxGT("E2steps/mm")
+#define MSG_E3STEPS                         _UxGT("E3steps/mm")
+#define MSG_E4STEPS                         _UxGT("E4steps/mm")
 #define MSG_TEMPERATURE                     _UxGT("オンド")                      // "Temperature"
 #define MSG_MOTION                          _UxGT("ウゴキセッテイ")                // "Motion"
 #define MSG_VOLUMETRIC                      _UxGT("フィラメント")                   // "Filament"
@@ -151,7 +151,7 @@
 #define MSG_CONTROL_RETRACT_RECOVER_SWAP    _UxGT("ホショウリョウS mm")              // "S UnRet+mm"
 #define MSG_CONTROL_RETRACT_RECOVERF        _UxGT("ホショウソクド mm/s")            // "UnRet  V"
 #define MSG_AUTORETRACT                     _UxGT("ジドウヒキコミ")                 // "AutoRetr."
-#define MSG_FILAMENTCHANGE                  _UxGT("フィラメントコウカン")             // "Change filament"
+#define MSG_FILAMENTCHANGE                  _UxGT("フィラメントコウカン")              // "Change filament"
 #define MSG_INIT_SDCARD                     _UxGT("SDカードサイヨミコミ")             // "Init. SD card"
 #define MSG_CNG_SDCARD                      _UxGT("SDカードコウカン")               // "Change SD card"
 #define MSG_ZPROBE_OUT                      _UxGT("Zプローブ ベッドガイ")            // "Z probe out. bed"
@@ -194,7 +194,9 @@
 #define MSG_INFO_EXTRUDERS                  _UxGT("エクストルーダースウ")             // "Extruders"
 #define MSG_INFO_BAUDRATE                   _UxGT("ボーレート")                    // "Baud"
 #define MSG_INFO_PROTOCOL                   _UxGT("プロトコル")                    // "Protocol"
-#define MSG_INFO_PRINT_COUNT                _UxGT("プリントスウ   ")                // "Print Count"
+#define MSG_LIGHTS_ON                       _UxGT("キョウタイナイショウメイ オン")       // "Case light on"
+#define MSG_LIGHTS_OFF                      _UxGT("キョウタイナイショウメイ オフ")       // "Case light off"
+#define MSG_INFO_PRINT_COUNT                _UxGT("プリントスウ ")                  // "Print Count"
 #define MSG_INFO_COMPLETED_PRINTS           _UxGT("カンリョウスウ")                  // "Completed"
 #define MSG_INFO_PRINT_TIME                 _UxGT("プリントジカンルイケイ")            // "Total print time"
 #define MSG_INFO_PRINT_LONGEST              _UxGT("サイチョウプリントジカン")           // "Longest job time"
@@ -207,25 +209,19 @@
 #define MSG_DAC_EEPROM_WRITE                MSG_STORE_EPROM              // "DAC EEPROM Write"
 #define MSG_FILAMENT_CHANGE_HEADER          _UxGT("フィラメントコウカン")              // "CHANGE FILAMENT"
 #define MSG_FILAMENT_CHANGE_OPTION_HEADER   _UxGT("ドウサヲセンタクシテクダサイ")        // "CHANGE OPTIONS:"
-#define MSG_FILAMENT_CHANGE_OPTION_EXTRUDE  _UxGT("サラニオシダス")                 // "Extrude more"
+#define MSG_FILAMENT_CHANGE_OPTION_EXTRUDE  "サラニオシダス")                 // "Extrude more"
 #define MSG_FILAMENT_CHANGE_OPTION_RESUME   _UxGT("プリントサイカイ")                // "Resume print"
 #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("コウカンヲカイシシマス")            // "Wait for start"
 #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("シバラクオマチクダサイ")            // "of the filament"
-#define MSG_FILAMENT_CHANGE_INIT_3          _UxGT("")                           // "change"
 #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("フィラメントヌキダシチュウ")          // "Wait for"
 #define MSG_FILAMENT_CHANGE_UNLOAD_2        _UxGT("シバラクオマチクダサイ")            // "filament unload"
-#define MSG_FILAMENT_CHANGE_UNLOAD_3        _UxGT("")
 #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("フィラメントヲソウニュウシ,")         // "Insert filament"
 #define MSG_FILAMENT_CHANGE_INSERT_2        _UxGT("クリックスルトゾッコウシマス")         // "and press button"
-#define MSG_FILAMENT_CHANGE_INSERT_3        _UxGT("")                           // "to continue..."
 #define MSG_FILAMENT_CHANGE_LOAD_1          _UxGT("フィラメントソウテンチュウ")          // "Wait for"
 #define MSG_FILAMENT_CHANGE_LOAD_2          _UxGT("シバラクオマチクダサイ")            // "filament load"
-#define MSG_FILAMENT_CHANGE_LOAD_3          _UxGT("")
 #define MSG_FILAMENT_CHANGE_EXTRUDE_1       _UxGT("フィラメントオシダシチュウ")          // "Wait for"
 #define MSG_FILAMENT_CHANGE_EXTRUDE_2       _UxGT("シバラクオマチクダサイ")            // "filament extrude"
-#define MSG_FILAMENT_CHANGE_EXTRUDE_3       _UxGT("")
 #define MSG_FILAMENT_CHANGE_RESUME_1        _UxGT("プリントヲサイカイシマス")           // "Wait for print"
 #define MSG_FILAMENT_CHANGE_RESUME_2        _UxGT("シバラクオマチクダサイ")            // "to resume"
-#define MSG_FILAMENT_CHANGE_RESUME_3        _UxGT("")
 
 #endif // LANGUAGE_KANA_UTF_H

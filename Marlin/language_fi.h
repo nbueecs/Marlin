@@ -30,6 +30,9 @@
 #ifndef LANGUAGE_FI_H
 #define LANGUAGE_FI_H
 
+#define MAPPER_C2C3
+#define DISPLAY_CHARSET_ISO10646_1
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" valmis.")
 #define MSG_SD_INSERTED                     _UxGT("Kortti asetettu")
 #define MSG_SD_REMOVED                      _UxGT("Kortti poistettu")
@@ -68,14 +71,14 @@
 #define MSG_MOVE_1MM                        _UxGT("Liikuta 1mm")
 #define MSG_MOVE_10MM                       _UxGT("Liikuta 10mm")
 #define MSG_SPEED                           _UxGT("Nopeus")
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Suutin")
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Alusta")
+#define MSG_NOZZLE                          _UxGT("Suutin")
+#define MSG_BED                             _UxGT("Alusta")
 #define MSG_FAN_SPEED                       _UxGT("Tuul. nopeus")
 #define MSG_FLOW                            _UxGT("Virtaus")
 #define MSG_CONTROL                         _UxGT("Kontrolli")
-#define MSG_MIN                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Min")
-#define MSG_MAX                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Max")
-#define MSG_FACTOR                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Kerr")
+#define MSG_MIN                             LCD_STR_THERMOMETER _UxGT(" Min")
+#define MSG_MAX                             LCD_STR_THERMOMETER _UxGT(" Max")
+#define MSG_FACTOR                          LCD_STR_THERMOMETER _UxGT(" Kerr")
 #define MSG_AUTOTEMP                        _UxGT("Autotemp")
 #define MSG_ON                              _UxGT("On ")
 #define MSG_OFF                             _UxGT("Off")
@@ -97,6 +100,10 @@
 #define MSG_YSTEPS                          _UxGT("Ysteps/mm")
 #define MSG_ZSTEPS                          _UxGT("Zsteps/mm")
 #define MSG_ESTEPS                          _UxGT("Esteps/mm")
+#define MSG_E1STEPS                         _UxGT("E1steps/mm")
+#define MSG_E2STEPS                         _UxGT("E2steps/mm")
+#define MSG_E3STEPS                         _UxGT("E3steps/mm")
+#define MSG_E4STEPS                         _UxGT("E4steps/mm")
 #define MSG_TEMPERATURE                     _UxGT("Lämpötila")
 #define MSG_MOTION                          _UxGT("Liike")
 #define MSG_VOLUMETRIC                      _UxGT("Filament")

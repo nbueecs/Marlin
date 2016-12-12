@@ -72,6 +72,7 @@
 // pt_utf8    Portuguese (UTF8)
 // ru         Russian
 // tr         Turkish
+// uk         Ukrainian
 // zh_CN      Simplified Chinese
 // zh_TW      Traditional Chinese
 
@@ -132,7 +133,7 @@
 #define MSG_INVALID_EXTRUDER                "Invalid extruder"
 #define MSG_INVALID_SOLENOID                "Invalid solenoid"
 #define MSG_ERR_NO_THERMISTORS              "No thermistors - no temperature"
-#define MSG_M115_REPORT                     "FIRMWARE_NAME:Marlin " DETAILED_BUILD_VERSION " SOURCE_CODE_URL:" SOURCE_CODE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID EMERGENCY_PARSER_CAPABILITIES "\n"
+#define MSG_M115_REPORT                     "FIRMWARE_NAME:Marlin " DETAILED_BUILD_VERSION " SOURCE_CODE_URL:" SOURCE_CODE_URL " PROTOCOL_VERSION:" PROTOCOL_VERSION " MACHINE_TYPE:" MACHINE_NAME " EXTRUDER_COUNT:" STRINGIFY(EXTRUDERS) " UUID:" MACHINE_UUID
 #define MSG_COUNT_X                         " Count X: "
 #define MSG_COUNT_A                         " Count A: "
 #define MSG_ERR_KILLED                      "Printer halted. kill() called!"
@@ -270,10 +271,10 @@
 #define MSG_N2 " 2"
 #define MSG_N3 " 3"
 #define MSG_N4 " 4"
-#define MSG_E1 " E1"
-#define MSG_E2 " E2"
-#define MSG_E3 " E3"
-#define MSG_E4 " E4"
+#define MSG_E1 "E1"
+#define MSG_E2 "E2"
+#define MSG_E3 "E3"
+#define MSG_E4 "E4"
 #define MSG_MOVE_E1 "1"
 #define MSG_MOVE_E2 "2"
 #define MSG_MOVE_E3 "3"
@@ -284,6 +285,16 @@
 #define MSG_DIAM_E4 " 4"
 
 #include INCLUDE_LANGUAGE
+
+#if DISABLED(SIMULATE_ROMFONT) \
+ && DISABLED(DISPLAY_CHARSET_ISO10646_1) \
+ && DISABLED(DISPLAY_CHARSET_ISO10646_5) \
+ && DISABLED(DISPLAY_CHARSET_ISO10646_KANA) \
+ && DISABLED(DISPLAY_CHARSET_ISO10646_GREEK) \
+ && DISABLED(DISPLAY_CHARSET_ISO10646_CN) \
+ && DISABLED(DISPLAY_CHARSET_ISO10646_TR)
+  #define DISPLAY_CHARSET_ISO10646_1 // use the better font on full graphic displays.
+#endif
 
 #include "language_en.h"
 

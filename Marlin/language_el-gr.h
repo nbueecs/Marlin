@@ -30,10 +30,13 @@
 #ifndef LANGUAGE_EL_GR_H
 #define LANGUAGE_EL_GR_H
 
+#define MAPPER_CECF
+#define DISPLAY_CHARSET_ISO10646_GREEK
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" έτοιμο.")
 #define MSG_SD_INSERTED                     _UxGT("Εισαγωγή κάρτας")
 #define MSG_SD_REMOVED                      _UxGT("Αφαίρεση κάρτας")
-#define MSG_LCD_ENDSTOPS                    _UxGT("Endstops") // Max length 8 characters
+#define MSG_LCD_ENDSTOPS                    _UxGT("Endstops" // Max length 8 characters
 #define MSG_MAIN                            _UxGT("Βασική Οθόνη")
 #define MSG_AUTOSTART                       _UxGT("Αυτόματη εκκίνηση")
 #define MSG_DISABLE_STEPPERS                _UxGT("Απενεργοποίηση βηματιστή")
@@ -75,8 +78,8 @@
 #define MSG_MOVE_10MM                       _UxGT("Μετακίνηση 10 μμ")
 #define MSG_SPEED                           _UxGT("Ταχύτητα")
 #define MSG_BED_Z                           _UxGT("Κλίνη Z")
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Ακροφύσιο")
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Κλίνη")
+#define MSG_NOZZLE                          _UxGT("Ακροφύσιο")
+#define MSG_BED                             _UxGT("Κλίνη")
 #define MSG_FAN_SPEED                       _UxGT("Ταχύτητα ανεμιστήρα")
 #define MSG_FLOW                            _UxGT("Ροή")
 #define MSG_CONTROL                         _UxGT("Έλεγχος")
@@ -105,6 +108,10 @@
 #define MSG_YSTEPS                          _UxGT("Bήματα Υ ανά μμ")
 #define MSG_ZSTEPS                          _UxGT("Bήματα Ζ ανά μμ")
 #define MSG_ESTEPS                          _UxGT("Bήματα Ε ανά μμ")
+#define MSG_E1STEPS                         _UxGT("Bήματα Ε1 ανά μμ")
+#define MSG_E2STEPS                         _UxGT("Bήματα Ε2 ανά μμ")
+#define MSG_E3STEPS                         _UxGT("Bήματα Ε3 ανά μμ")
+#define MSG_E4STEPS                         _UxGT("Bήματα Ε4 ανά μμ")
 #define MSG_TEMPERATURE                     _UxGT("Θερμοκρασία")
 #define MSG_MOTION                          _UxGT("Κίνηση")
 #define MSG_VOLUMETRIC                      _UxGT("Νήμα")

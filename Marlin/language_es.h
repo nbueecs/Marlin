@@ -30,6 +30,8 @@
 #ifndef LANGUAGE_ES_H
 #define LANGUAGE_ES_H
 
+#define DISPLAY_CHARSET_ISO10646_1
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" lista.")
 #define MSG_SD_INSERTED                     _UxGT("Tarjeta colocada")
 #define MSG_SD_REMOVED                      _UxGT("Tarjeta retirada")
@@ -74,14 +76,14 @@
 #define MSG_MOVE_10MM                       _UxGT("Mover 10mm")
 #define MSG_SPEED                           _UxGT("Velocidad")
 #define MSG_BED_Z                           _UxGT("Plataforma Z")
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Boquilla")
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Plataforma")
+#define MSG_NOZZLE                          _UxGT("Boquilla")
+#define MSG_BED                             _UxGT("Plataforma")
 #define MSG_FAN_SPEED                       _UxGT("Ventilador")
 #define MSG_FLOW                            _UxGT("Flujo")
 #define MSG_CONTROL                         _UxGT("Control")
-#define MSG_MIN                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Min")
-#define MSG_MAX                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Max")
-#define MSG_FACTOR                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Fact")
+#define MSG_MIN                             LCD_STR_THERMOMETER _UxGT(" Min")
+#define MSG_MAX                             LCD_STR_THERMOMETER _UxGT(" Max")
+#define MSG_FACTOR                          LCD_STR_THERMOMETER _UxGT(" Fact")
 #define MSG_AUTOTEMP                        _UxGT("Temperatura Auto.")
 #define MSG_ON                              _UxGT("Encender")
 #define MSG_OFF                             _UxGT("Apagar")
@@ -104,6 +106,10 @@
 #define MSG_YSTEPS                          _UxGT("Y pasos/mm")
 #define MSG_ZSTEPS                          _UxGT("Z pasos/mm")
 #define MSG_ESTEPS                          _UxGT("E pasos/mm")
+#define MSG_E1STEPS                         _UxGT("E1 pasos/mm")
+#define MSG_E2STEPS                         _UxGT("E2 pasos/mm")
+#define MSG_E3STEPS                         _UxGT("E3 pasos/mm")
+#define MSG_E4STEPS                         _UxGT("E4 pasos/mm")
 #define MSG_TEMPERATURE                     _UxGT("Temperatura")
 #define MSG_MOTION                          _UxGT("Movimiento")
 #define MSG_VOLUMETRIC                      _UxGT("Filamento")
@@ -185,27 +191,35 @@
 #define MSG_INFO_MIN_TEMP                   _UxGT("Temperatura minima")
 #define MSG_INFO_MAX_TEMP                   _UxGT("Temperatura maxima")
 #define MSG_INFO_PSU                        _UxGT("Fuente de poder")
+
 #define MSG_FILAMENT_CHANGE_HEADER          _UxGT("Cambiar Filamento")
 #define MSG_FILAMENT_CHANGE_OPTION_HEADER   _UxGT("Opciones de cambio:")
 #define MSG_FILAMENT_CHANGE_OPTION_EXTRUDE  _UxGT("Extruir mas")
 #define MSG_FILAMENT_CHANGE_OPTION_RESUME   _UxGT("Resumir imp.")
+
 #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Esperando iniciar")
-#define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("del filamento")
-#define MSG_FILAMENT_CHANGE_INIT_3          _UxGT("cambiar")
-#define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("Esperado por")
-#define MSG_FILAMENT_CHANGE_UNLOAD_2        _UxGT("filamento expulsado")
-#define MSG_FILAMENT_CHANGE_UNLOAD_3        _UxGT("")
+
 #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("Inserte filamento")
 #define MSG_FILAMENT_CHANGE_INSERT_2        _UxGT("y presione el boton")
-#define MSG_FILAMENT_CHANGE_INSERT_3        _UxGT("para continuar...")
+
+#if LCD_HEIGHT >= 4
+  // Up to 3 lines allowed
+  #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("del filamento")
+  #define MSG_FILAMENT_CHANGE_INIT_3          _UxGT("cambiar")
+  #define MSG_FILAMENT_CHANGE_INSERT_3        _UxGT("para continuar...")
+#else // LCD_HEIGHT < 4
+  // Up to 2 lines allowed
+  #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("del fil. cambiar")
+  #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("Inserte filamento")
+#endif // LCD_HEIGHT < 4
+
+#define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("Esperado por")
+#define MSG_FILAMENT_CHANGE_UNLOAD_2        _UxGT("filamento expulsado")
 #define MSG_FILAMENT_CHANGE_LOAD_1          _UxGT("Esperado por")
 #define MSG_FILAMENT_CHANGE_LOAD_2          _UxGT("Cargar filamento")
-#define MSG_FILAMENT_CHANGE_LOAD_3          _UxGT("")
 #define MSG_FILAMENT_CHANGE_EXTRUDE_1       _UxGT("Esperado por")
 #define MSG_FILAMENT_CHANGE_EXTRUDE_2       _UxGT("Extruir filamento")
-#define MSG_FILAMENT_CHANGE_EXTRUDE_3       _UxGT("")
 #define MSG_FILAMENT_CHANGE_RESUME_1        _UxGT("Esperando imp.")
 #define MSG_FILAMENT_CHANGE_RESUME_2        _UxGT("para resumir")
-#define MSG_FILAMENT_CHANGE_RESUME_3        _UxGT("")
 
 #endif // LANGUAGE_ES_H

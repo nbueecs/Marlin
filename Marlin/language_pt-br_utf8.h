@@ -30,6 +30,8 @@
 #ifndef LANGUAGE_PT_BR_UTF_H
 #define LANGUAGE_PT_BR_UTF_H
 
+#define DISPLAY_CHARSET_ISO10646_1
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" pronto.")
 #define MSG_SD_INSERTED                     _UxGT("Cartão inserido")
 #define MSG_SD_REMOVED                      _UxGT("Cartão removido")
@@ -69,14 +71,14 @@
 #define MSG_MOVE_10MM                       _UxGT("Mover 10mm")
 #define MSG_SPEED                           _UxGT("Velocidade")
 #define MSG_BED_Z                           _UxGT("Base Z")
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Bocal")
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Base")
+#define MSG_NOZZLE                          LCD_STR_THERMOMETER _UxGT(" Bocal")
+#define MSG_BED                             LCD_STR_THERMOMETER _UxGT(" Base")
 #define MSG_FAN_SPEED                       _UxGT("Vel. Ventoinha")
 #define MSG_FLOW                            _UxGT("Fluxo")
 #define MSG_CONTROL                         _UxGT("Controle")
-#define MSG_MIN                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Min")
-#define MSG_MAX                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Max")
-#define MSG_FACTOR                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Fact")
+#define MSG_MIN                             LCD_STR_THERMOMETER _UxGT(" Min")
+#define MSG_MAX                             LCD_STR_THERMOMETER _UxGT(" Max")
+#define MSG_FACTOR                          LCD_STR_THERMOMETER _UxGT(" Fact")
 #define MSG_AUTOTEMP                        _UxGT("Temp. Automática")
 #define MSG_ON                              _UxGT("Ligado ")
 #define MSG_OFF                             _UxGT("Desligado")
@@ -99,6 +101,10 @@
 #define MSG_YSTEPS                          _UxGT("Passo Y/mm")
 #define MSG_ZSTEPS                          _UxGT("Passo Z/mm")
 #define MSG_ESTEPS                          _UxGT("E/mm")
+#define MSG_E1STEPS                         _UxGT("E1/mm")
+#define MSG_E2STEPS                         _UxGT("E2/mm")
+#define MSG_E3STEPS                         _UxGT("E3/mm")
+#define MSG_E4STEPS                         _UxGT("E4/mm")
 #define MSG_TEMPERATURE                     _UxGT("Temperatura")
 #define MSG_MOTION                          _UxGT("Movimento")
 #define MSG_VOLUMETRIC                      _UxGT("Filamento")

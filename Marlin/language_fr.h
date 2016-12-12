@@ -30,6 +30,8 @@
 #ifndef LANGUAGE_FR_H
 #define LANGUAGE_FR_H
 
+#define DISPLAY_CHARSET_ISO10646_1
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" prete.")
 #define MSG_SD_INSERTED                     _UxGT("Carte inseree")
 #define MSG_SD_REMOVED                      _UxGT("Carte retiree")
@@ -75,14 +77,14 @@
 #define MSG_MOVE_10MM                       _UxGT("Depl. 10mm")
 #define MSG_SPEED                           _UxGT(" Vitesse")
 #define MSG_BED_Z                           _UxGT("Plateau Z")
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Buse")
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Plateau")
+#define MSG_NOZZLE                          _UxGT("Buse")
+#define MSG_BED                             _UxGT("Plateau")
 #define MSG_FAN_SPEED                       _UxGT("Vitesse ventil.")
 #define MSG_FLOW                            _UxGT("Flux")
 #define MSG_CONTROL                         _UxGT("Controler")
-#define MSG_MIN                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Min")
-#define MSG_MAX                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Max")
-#define MSG_FACTOR                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Facteur")
+#define MSG_MIN                             LCD_STR_THERMOMETER _UxGT(" Min")
+#define MSG_MAX                             LCD_STR_THERMOMETER _UxGT(" Max")
+#define MSG_FACTOR                          LCD_STR_THERMOMETER _UxGT(" Facteur")
 #define MSG_AUTOTEMP                        _UxGT("Temp. Auto.")
 #define MSG_ON                              _UxGT("Marche ")
 #define MSG_OFF                             _UxGT("Arret")
@@ -106,6 +108,10 @@
 #define MSG_YSTEPS                          _UxGT("Ypas/mm")
 #define MSG_ZSTEPS                          _UxGT("Zpas/mm")
 #define MSG_ESTEPS                          _UxGT("Epas/mm")
+#define MSG_E1STEPS                         _UxGT("E1pas/mm")
+#define MSG_E2STEPS                         _UxGT("E2pas/mm")
+#define MSG_E3STEPS                         _UxGT("E3pas/mm")
+#define MSG_E4STEPS                         _UxGT("E4pas/mm")
 #define MSG_TEMPERATURE                     _UxGT("Temperature")
 #define MSG_MOTION                          _UxGT("Mouvement")
 #define MSG_VOLUMETRIC                      _UxGT("Filament")
@@ -185,9 +191,10 @@
 #define MSG_INFO_EXTRUDERS                  _UxGT("Extruders")
 #define MSG_INFO_BAUDRATE                   _UxGT("Baud")
 #define MSG_INFO_PROTOCOL                   _UxGT("Protocole")
+#define MSG_LIGHTS_ON                       _UxGT("Allumer boitier")
+#define MSG_LIGHTS_OFF                      _UxGT("Eteindre boitier")
 
-
-#if LCD_WIDTH > 19
+#if LCD_WIDTH >= 20
   #define MSG_INFO_PRINT_COUNT              _UxGT("Nbre impressions")
   #define MSG_INFO_COMPLETED_PRINTS         _UxGT("Terminees")
   #define MSG_INFO_PRINT_TIME               _UxGT("Tps impr. total")
@@ -204,41 +211,39 @@
 #define MSG_INFO_MIN_TEMP                   _UxGT("Temp Min")
 #define MSG_INFO_MAX_TEMP                   _UxGT("Temp Max")
 #define MSG_INFO_PSU                        _UxGT("Alimentation")
-
 #define MSG_DRIVE_STRENGTH                  _UxGT("Puiss. moteur ")
 #define MSG_DAC_PERCENT                     _UxGT("Driver %")
 #define MSG_DAC_EEPROM_WRITE                _UxGT("DAC EEPROM sauv.")
+
 #define MSG_FILAMENT_CHANGE_HEADER          _UxGT("CHANGER FILAMENT")
 #define MSG_FILAMENT_CHANGE_OPTION_HEADER   _UxGT("CHANGER OPTIONS:")
 #define MSG_FILAMENT_CHANGE_OPTION_EXTRUDE  _UxGT("+ extrusion")
 #define MSG_FILAMENT_CHANGE_OPTION_RESUME   _UxGT("Reprendre impr.")
 
 #if LCD_HEIGHT >= 4
-    #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Attente Demarrage")
-    #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("du filament")
-    #define MSG_FILAMENT_CHANGE_INIT_3          _UxGT("changer")
-    #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("attente de")
-    #define MSG_FILAMENT_CHANGE_UNLOAD_2        _UxGT("decharger filament")
-    #define MSG_FILAMENT_CHANGE_UNLOAD_3        _UxGT("")
-    #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("inserer filament")
-    #define MSG_FILAMENT_CHANGE_INSERT_2        _UxGT("et app. bouton")
-    #define MSG_FILAMENT_CHANGE_INSERT_3        _UxGT("pour continuer...")
-    #define MSG_FILAMENT_CHANGE_LOAD_1          _UxGT("attente de")
-    #define MSG_FILAMENT_CHANGE_LOAD_2          _UxGT("charger filament")
-    #define MSG_FILAMENT_CHANGE_LOAD_3          _UxGT("")
-    #define MSG_FILAMENT_CHANGE_EXTRUDE_1       _UxGT("attente de")
-    #define MSG_FILAMENT_CHANGE_EXTRUDE_2       _UxGT("extrusion fil.")
-    #define MSG_FILAMENT_CHANGE_EXTRUDE_3       _UxGT("")
-    #define MSG_FILAMENT_CHANGE_RESUME_1        _UxGT("attente impression")
-    #define MSG_FILAMENT_CHANGE_RESUME_2        _UxGT("pour reprendre")
-    #define MSG_FILAMENT_CHANGE_RESUME_3        _UxGT("")
+  // Up to 3 lines allowed
+  #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Attente Demarrage")
+  #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("du filament")
+  #define MSG_FILAMENT_CHANGE_INIT_3          _UxGT("changer")
+  #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("attente de")
+  #define MSG_FILAMENT_CHANGE_UNLOAD_2        _UxGT("decharger filament")
+  #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("inserer filament")
+  #define MSG_FILAMENT_CHANGE_INSERT_2        _UxGT("et app. bouton")
+  #define MSG_FILAMENT_CHANGE_INSERT_3        _UxGT("pour continuer...")
+  #define MSG_FILAMENT_CHANGE_LOAD_1          _UxGT("attente de")
+  #define MSG_FILAMENT_CHANGE_LOAD_2          _UxGT("charger filament")
+  #define MSG_FILAMENT_CHANGE_EXTRUDE_1       _UxGT("attente de")
+  #define MSG_FILAMENT_CHANGE_EXTRUDE_2       _UxGT("extrusion fil.")
+  #define MSG_FILAMENT_CHANGE_RESUME_1        _UxGT("attente impression")
+  #define MSG_FILAMENT_CHANGE_RESUME_2        _UxGT("pour reprendre")
 #else // LCD_HEIGHT < 4
-    #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Patientez...")
-    #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("Ejection...")
-    #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("Inserer et click")
-    #define MSG_FILAMENT_CHANGE_LOAD_1          _UxGT("Chargement...")
-    #define MSG_FILAMENT_CHANGE_EXTRUDE_1       _UxGT("Extrusion...")
-    #define MSG_FILAMENT_CHANGE_RESUME_1        _UxGT("Reprise...")
+  // Up to 2 lines allowed
+  #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Patientez...")
+  #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("Ejection...")
+  #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("Inserer et click")
+  #define MSG_FILAMENT_CHANGE_LOAD_1          _UxGT("Chargement...")
+  #define MSG_FILAMENT_CHANGE_EXTRUDE_1       _UxGT("Extrusion...")
+  #define MSG_FILAMENT_CHANGE_RESUME_1        _UxGT("Reprise...")
 #endif // LCD_HEIGHT < 4
 
 #endif // LANGUAGE_FR_H

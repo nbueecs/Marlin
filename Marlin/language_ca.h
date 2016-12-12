@@ -30,6 +30,9 @@
 #ifndef LANGUAGE_CA_H
 #define LANGUAGE_CA_H
 
+#define MAPPER_C2C3  // because of "ó")
+#define DISPLAY_CHARSET_ISO10646_1
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" preparada.")
 #define MSG_SD_INSERTED                     _UxGT("SD detectada.")
 #define MSG_SD_REMOVED                      _UxGT("SD expulsada.")
@@ -73,9 +76,9 @@
 #define MSG_FAN_SPEED                       _UxGT("Vel. Ventilador")
 #define MSG_FLOW                            _UxGT("Fluxe")
 #define MSG_CONTROL                         _UxGT("Control")
-#define MSG_MIN                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Min")
-#define MSG_MAX                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Max")
-#define MSG_FACTOR                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Fact")
+#define MSG_MIN                             LCD_STR_THERMOMETER _UxGT(" Min")
+#define MSG_MAX                             LCD_STR_THERMOMETER _UxGT(" Max")
+#define MSG_FACTOR                          LCD_STR_THERMOMETER _UxGT(" Fact")
 #define MSG_AUTOTEMP                        _UxGT("Autotemp")
 #define MSG_ON                              _UxGT("On ")
 #define MSG_OFF                             _UxGT("Off")
@@ -84,7 +87,8 @@
 #define MSG_PID_D                           _UxGT("PID-D")
 #define MSG_PID_C                           _UxGT("PID-C")
 #define MSG_ACC                             _UxGT("Accel")
-#define MSG_VXY_JERK                        _UxGT("Vxy-jerk")
+#define MSG_VX_JERK                         _UxGT("Vx-jerk")
+#define MSG_VY_JERK                         _UxGT("Vy-jerk")
 #define MSG_VZ_JERK                         _UxGT("Vz-jerk")
 #define MSG_VE_JERK                         _UxGT("Ve-jerk")
 #define MSG_VMAX                            _UxGT("Vmax ")
@@ -96,6 +100,10 @@
 #define MSG_YSTEPS                          _UxGT("Ypassos/mm")
 #define MSG_ZSTEPS                          _UxGT("Zpassos/mm")
 #define MSG_ESTEPS                          _UxGT("Epassos/mm")
+#define MSG_E1STEPS                         _UxGT("E1passos/mm")
+#define MSG_E2STEPS                         _UxGT("E2passos/mm")
+#define MSG_E3STEPS                         _UxGT("E3passos/mm")
+#define MSG_E4STEPS                         _UxGT("E4passos/mm")
 #define MSG_TEMPERATURE                     _UxGT("Temperatura")
 #define MSG_MOTION                          _UxGT("Moviment")
 #define MSG_VOLUMETRIC                      _UxGT("Filament")

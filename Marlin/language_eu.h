@@ -30,6 +30,8 @@
 #ifndef LANGUAGE_EU_H
 #define LANGUAGE_EU_H
 
+#define DISPLAY_CHARSET_ISO10646_1
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" prest.")
 #define MSG_SD_INSERTED                     _UxGT("Txartela sartuta")
 #define MSG_SD_REMOVED                      _UxGT("Txartela kenduta")
@@ -68,14 +70,14 @@
 #define MSG_MOVE_1MM                        _UxGT("Mugitu 1mm")
 #define MSG_MOVE_10MM                       _UxGT("Mugitu 10mm")
 #define MSG_SPEED                           _UxGT("Abiadura")
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Pita")
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Ohea")
+#define MSG_NOZZLE                          _UxGT("Pita")
+#define MSG_BED                             _UxGT("Ohea")
 #define MSG_FAN_SPEED                       _UxGT("Haizagailua")
 #define MSG_FLOW                            _UxGT("Fluxua")
 #define MSG_CONTROL                         _UxGT("Kontrola")
-#define MSG_MIN                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Min")
-#define MSG_MAX                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Max")
-#define MSG_FACTOR                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Faktorea")
+#define MSG_MIN                             LCD_STR_THERMOMETER _UxGT(" Min")
+#define MSG_MAX                             LCD_STR_THERMOMETER _UxGT(" Max")
+#define MSG_FACTOR                          LCD_STR_THERMOMETER _UxGT(" Faktorea")
 #define MSG_AUTOTEMP                        _UxGT("Auto tenperatura")
 #define MSG_ON                              _UxGT("On ")
 #define MSG_OFF                             _UxGT("Off")
@@ -97,6 +99,10 @@
 #define MSG_YSTEPS                          _UxGT("Y pausoak/mm")
 #define MSG_ZSTEPS                          _UxGT("Z pausoak/mm")
 #define MSG_ESTEPS                          _UxGT("E pausoak/mm")
+#define MSG_E1STEPS                         _UxGT("E1 pausoak/mm")
+#define MSG_E2STEPS                         _UxGT("E2 pausoak/mm")
+#define MSG_E3STEPS                         _UxGT("E3 pausoak/mm")
+#define MSG_E4STEPS                         _UxGT("E4 pausoak/mm")
 #define MSG_TEMPERATURE                     _UxGT("Tenperatura")
 #define MSG_MOTION                          _UxGT("Mugimendua")
 #define MSG_VOLUMETRIC                      _UxGT("Filament")

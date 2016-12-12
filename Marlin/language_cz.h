@@ -34,6 +34,8 @@
 #ifndef LANGUAGE_CZ_H
 #define LANGUAGE_CZ_H
 
+#define DISPLAY_CHARSET_ISO10646_1
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" pripraven.")
 #define MSG_SD_INSERTED                     _UxGT("Karta vlozena")
 #define MSG_SD_REMOVED                      _UxGT("Karta vyjmuta")
@@ -110,6 +112,10 @@
 #define MSG_YSTEPS                          _UxGT("Ykroku/mm")
 #define MSG_ZSTEPS                          _UxGT("Zkroku/mm")
 #define MSG_ESTEPS                          _UxGT("Ekroku/mm")
+#define MSG_E1STEPS                         _UxGT("E1kroku/mm")
+#define MSG_E2STEPS                         _UxGT("E2kroku/mm")
+#define MSG_E3STEPS                         _UxGT("E3kroku/mm")
+#define MSG_E4STEPS                         _UxGT("E4kroku/mm")
 #define MSG_TEMPERATURE                     _UxGT("Teplota")
 #define MSG_MOTION                          _UxGT("Pohyb")
 #define MSG_VOLUMETRIC                      _UxGT("Filament")
@@ -186,8 +192,9 @@
 #define MSG_INFO_EXTRUDERS                  _UxGT("Extrudery")
 #define MSG_INFO_BAUDRATE                   _UxGT("Rychlost")
 #define MSG_INFO_PROTOCOL                   _UxGT("Protokol")
-
-#if LCD_WIDTH > 19
+#define MSG_LIGHTS_ON                       _UxGT("Osvetleni Zap")
+#define MSG_LIGHTS_OFF                      _UxGT("Osvetleni Vyp")
+#if LCD_WIDTH >= 20
   #define MSG_INFO_PRINT_COUNT              _UxGT("Pocet tisku")
   #define MSG_INFO_COMPLETED_PRINTS         _UxGT("Dokonceno")
   #define MSG_INFO_PRINT_TIME               _UxGT("Celkovy cas")
@@ -211,7 +218,9 @@
 #define MSG_FILAMENT_CHANGE_OPTION_HEADER   _UxGT("CO DAL?")
 #define MSG_FILAMENT_CHANGE_OPTION_EXTRUDE  _UxGT("Jeste vytlacit")
 #define MSG_FILAMENT_CHANGE_OPTION_RESUME   _UxGT("Obnovit tisk")
+
 #if LCD_HEIGHT >= 4
+  // Up to 3 lines allowed
   #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Cekejte prosim")
   #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("na zahajeni")
   #define MSG_FILAMENT_CHANGE_INIT_3          _UxGT("vymeny filamentu")
@@ -231,6 +240,7 @@
   #define MSG_FILAMENT_CHANGE_RESUME_2        _UxGT("na pokracovani")
   #define MSG_FILAMENT_CHANGE_RESUME_3        _UxGT("tisku")
 #else // LCD_HEIGHT < 4
+  // Up to 2 lines allowed
   #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Cekejte...")
   #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("Vysouvani...")
   #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("Vlozte, kliknete")

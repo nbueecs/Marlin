@@ -30,6 +30,9 @@
 #ifndef LANGUAGE_EL_H
 #define LANGUAGE_EL_H
 
+#define MAPPER_CECF
+#define DISPLAY_CHARSET_ISO10646_GREEK
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" έτοιμο.")
 #define MSG_SD_INSERTED                     _UxGT("Εισαγωγή κάρτας")
 #define MSG_SD_REMOVED                      _UxGT("Αφαίρεση κάρτας")
@@ -75,8 +78,8 @@
 #define MSG_MOVE_10MM                       _UxGT("Μετακίνηση 10μμ")
 #define MSG_SPEED                           _UxGT("Ταχύτητα")
 #define MSG_BED_Z                           _UxGT("Επ. Εκτύπωσης Z")
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Ακροφύσιο")
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Κλίνη")
+#define MSG_NOZZLE                          _UxGT("Ακροφύσιο")
+#define MSG_BED                             _UxGT("Κλίνη")
 #define MSG_FAN_SPEED                       _UxGT("Ταχύτητα ανεμιστήρα")
 #define MSG_FLOW                            _UxGT("Ροή")
 #define MSG_CONTROL                         _UxGT("Έλεγχος")
@@ -105,6 +108,10 @@
 #define MSG_YSTEPS                          _UxGT("Bήματα Υ ανά μμ")
 #define MSG_ZSTEPS                          _UxGT("Bήματα Ζ ανά μμ")
 #define MSG_ESTEPS                          _UxGT("Bήματα Ε ανά μμ")
+#define MSG_E1STEPS                         _UxGT("Bήματα Ε1 ανά μμ")
+#define MSG_E2STEPS                         _UxGT("Bήματα Ε2 ανά μμ")
+#define MSG_E3STEPS                         _UxGT("Bήματα Ε3 ανά μμ")
+#define MSG_E4STEPS                         _UxGT("Bήματα Ε4 ανά μμ")
 #define MSG_TEMPERATURE                     _UxGT("Θερμοκρασία")
 #define MSG_MOTION                          _UxGT("Κίνηση")
 #define MSG_VOLUMETRIC                      _UxGT("Νήμα")
@@ -131,7 +138,7 @@
 #define MSG_KILLED                          _UxGT("ΤΕΡΜΑΤΙΣΜΟΣ. ")
 #define MSG_STOPPED                         _UxGT("ΔΙΑΚΟΠΗ. ")
 #define MSG_CONTROL_RETRACT                 _UxGT("Ανάσυρση μμ")
-#define MSG_CONTROL_RETRACT_SWAP            _UxGT("Εναλλαγή ανάσυρσης μμ")  //SHORTEN
+#define MSG_CONTROL_RETRACT_SWAP            _UxGT("Εναλλαγή ανάσυρσης μμ"  //SHORTEN
 #define MSG_CONTROL_RETRACTF                _UxGT("Ανάσυρση V")
 #define MSG_CONTROL_RETRACT_ZLIFT           _UxGT("Μεταπήδηση μμ")
 #define MSG_CONTROL_RETRACT_RECOVER         _UxGT("UnRet +mm")
@@ -177,12 +184,12 @@
 #define MSG_INFO_BAUDRATE                   _UxGT("Baud")
 #define MSG_INFO_PROTOCOL                   _UxGT("Protocol")
 
-#if LCD_WIDTH > 19
+#if LCD_WIDTH >= 20
   #define MSG_INFO_PRINT_COUNT              _UxGT("Print Count")
   #define MSG_INFO_COMPLETED_PRINTS         _UxGT("Completed  ")
   #define MSG_INFO_PRINT_TIME               _UxGT("Total Time ")
 #else
-  #define MSG_INFO_PRINT_COUNT              _UxGT("Prints   ")
+  #define MSG_INFO_PRINT_COUNT              _UxGT("Prints   _UxGT(")
   #define MSG_INFO_COMPLETED_PRINTS         _UxGT("Completed")
   #define MSG_INFO_PRINT_TIME               _UxGT("Duration ")
 #endif
@@ -195,31 +202,29 @@
 #define MSG_FILAMENT_CHANGE_OPTION_RESUME   _UxGT("Resume print")
 
 #if LCD_HEIGHT >= 4
-  #define MSG_FILAMENT_CHANGE_INIT_1        _UxGT("Wait for start")
-  #define MSG_FILAMENT_CHANGE_INIT_2        _UxGT("of the filament")
-  #define MSG_FILAMENT_CHANGE_INIT_3        _UxGT("change")
-  #define MSG_FILAMENT_CHANGE_UNLOAD_1      _UxGT("Wait for")
-  #define MSG_FILAMENT_CHANGE_UNLOAD_2      _UxGT("filament unload")
-  #define MSG_FILAMENT_CHANGE_UNLOAD_3      _UxGT("")
-  #define MSG_FILAMENT_CHANGE_INSERT_1      _UxGT("Insert filament")
-  #define MSG_FILAMENT_CHANGE_INSERT_2      _UxGT("and press button")
-  #define MSG_FILAMENT_CHANGE_INSERT_3      _UxGT("to continue...")
-  #define MSG_FILAMENT_CHANGE_LOAD_1        _UxGT("Wait for")
-  #define MSG_FILAMENT_CHANGE_LOAD_2        _UxGT("filament load")
-  #define MSG_FILAMENT_CHANGE_LOAD_3        _UxGT("")
-  #define MSG_FILAMENT_CHANGE_EXTRUDE_1     _UxGT("Wait for")
-  #define MSG_FILAMENT_CHANGE_EXTRUDE_2     _UxGT("filament extrude")
-  #define MSG_FILAMENT_CHANGE_EXTRUDE_3     _UxGT("")
-  #define MSG_FILAMENT_CHANGE_RESUME_1      _UxGT("Wait for print")
-  #define MSG_FILAMENT_CHANGE_RESUME_2      _UxGT("to resume")
-  #define MSG_FILAMENT_CHANGE_RESUME_3      _UxGT("")
+  // Up to 3 lines allowed
+  #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Wait for start")
+  #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("of the filament")
+  #define MSG_FILAMENT_CHANGE_INIT_3          _UxGT("change")
+  #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("Wait for")
+  #define MSG_FILAMENT_CHANGE_UNLOAD_2        _UxGT("filament unload")
+  #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("Insert filament")
+  #define MSG_FILAMENT_CHANGE_INSERT_2        _UxGT("and press button")
+  #define MSG_FILAMENT_CHANGE_INSERT_3        _UxGT("to continue...")
+  #define MSG_FILAMENT_CHANGE_LOAD_1          _UxGT("Wait for")
+  #define MSG_FILAMENT_CHANGE_LOAD_2          _UxGT("filament load")
+  #define MSG_FILAMENT_CHANGE_EXTRUDE_1       _UxGT("Wait for")
+  #define MSG_FILAMENT_CHANGE_EXTRUDE_2       _UxGT("filament extrude")
+  #define MSG_FILAMENT_CHANGE_RESUME_1        _UxGT("Wait for print")
+  #define MSG_FILAMENT_CHANGE_RESUME_2        _UxGT("to resume")
 #else // LCD_HEIGHT < 4
-  #define MSG_FILAMENT_CHANGE_INIT_1        _UxGT("Please wait...")
-  #define MSG_FILAMENT_CHANGE_UNLOAD_1      _UxGT("Ejecting...")
-  #define MSG_FILAMENT_CHANGE_INSERT_1      _UxGT("Insert and Click")
-  #define MSG_FILAMENT_CHANGE_LOAD_1        _UxGT("Loading...")
-  #define MSG_FILAMENT_CHANGE_EXTRUDE_1     _UxGT("Extruding...")
-  #define MSG_FILAMENT_CHANGE_RESUME_1      _UxGT("Resuming...")
+  // Up to 2 lines allowed
+  #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Please wait...")
+  #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("Ejecting...")
+  #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("Insert and Click")
+  #define MSG_FILAMENT_CHANGE_LOAD_1          _UxGT("Loading...")
+  #define MSG_FILAMENT_CHANGE_EXTRUDE_1       _UxGT("Extruding...")
+  #define MSG_FILAMENT_CHANGE_RESUME_1        _UxGT("Resuming...")
 #endif
 
 #endif // LANGUAGE_EL_H

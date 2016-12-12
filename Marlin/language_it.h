@@ -30,6 +30,8 @@
 #ifndef LANGUAGE_IT_H
 #define LANGUAGE_IT_H
 
+#define DISPLAY_CHARSET_ISO10646_1
+
 #define WELCOME_MSG                         MACHINE_NAME _UxGT(" pronto.")
 #define MSG_SD_INSERTED                     _UxGT("SD Card inserita")
 #define MSG_SD_REMOVED                      _UxGT("SD Card rimossa")
@@ -79,8 +81,8 @@
   #define MSG_SPEED                         _UxGT("Velocita")
 #endif
 #define MSG_BED_Z                           _UxGT("piatto Z")
-#define MSG_NOZZLE                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Ugello")
-#define MSG_BED                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Piatto")
+#define MSG_NOZZLE                          _UxGT("Ugello")
+#define MSG_BED                             _UxGT("Piatto")
 #if ENABLED(DOGLCD)
   #define MSG_FAN_SPEED                     _UxGT("Velocità ventola")
 #else
@@ -88,9 +90,9 @@
 #endif
 #define MSG_FLOW                            _UxGT("Flusso")
 #define MSG_CONTROL                         _UxGT("Controllo")
-#define MSG_MIN                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Min")
-#define MSG_MAX                             _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Max")
-#define MSG_FACTOR                          _UxGT(" ") LCD_STR_THERMOMETER _UxGT(" Fact")
+#define MSG_MIN                             LCD_STR_THERMOMETER _UxGT(" Min")
+#define MSG_MAX                             LCD_STR_THERMOMETER _UxGT(" Max")
+#define MSG_FACTOR                          LCD_STR_THERMOMETER _UxGT(" Fact")
 #define MSG_AUTOTEMP                        _UxGT("Autotemp")
 #define MSG_ON                              _UxGT("On ")
 #define MSG_OFF                             _UxGT("Off")
@@ -114,6 +116,10 @@
 #define MSG_YSTEPS                          _UxGT("Ypassi/mm")
 #define MSG_ZSTEPS                          _UxGT("Zpassi/mm")
 #define MSG_ESTEPS                          _UxGT("Epassi/mm")
+#define MSG_E1STEPS                         _UxGT("E1passi/mm")
+#define MSG_E2STEPS                         _UxGT("E2passi/mm")
+#define MSG_E3STEPS                         _UxGT("E3passi/mm")
+#define MSG_E4STEPS                         _UxGT("E4passi/mm")
 #define MSG_TEMPERATURE                     _UxGT("Temperatura")
 #define MSG_MOTION                          _UxGT("Movimento")
 #define MSG_VOLUMETRIC                      _UxGT("Filamento")
@@ -151,6 +157,8 @@
 #define MSG_INIT_SDCARD                     _UxGT("Iniz. SD-Card")
 #define MSG_CNG_SDCARD                      _UxGT("Cambia SD-Card")
 #define MSG_ZPROBE_OUT                      _UxGT("Z probe out. bed")
+#define MSG_BLTOUCH_SELFTEST                _UxGT("Autotest BLTouch")
+#define MSG_BLTOUCH_RESET                   _UxGT("Resetta BLTouch")
 #define MSG_HOME                            _UxGT("Home")  // Used as MSG_HOME " " MSG_X MSG_Y MSG_Z " " MSG_FIRST
 #define MSG_FIRST                           _UxGT("prima")
 #define MSG_ZPROBE_ZOFFSET                  _UxGT("Z Offset")
@@ -188,8 +196,9 @@
 #define MSG_INFO_EXTRUDERS                  _UxGT("Estrusori")
 #define MSG_INFO_BAUDRATE                   _UxGT("Baud")
 #define MSG_INFO_PROTOCOL                   _UxGT("Protocollo")
-
-#if LCD_WIDTH > 19
+#define MSG_LIGHTS_ON                       _UxGT("Luci Case on")
+#define MSG_LIGHTS_OFF                      _UxGT("Luci Case off")
+#if LCD_WIDTH >= 20
   #define MSG_INFO_PRINT_COUNT              _UxGT("Contat. stampa")
   #define MSG_INFO_COMPLETED_PRINTS         _UxGT("Completati")
   #define MSG_INFO_PRINT_TIME               _UxGT("Tempo totale")
@@ -214,11 +223,17 @@
 #define MSG_INFO_MAX_TEMP                   _UxGT("Temp max")
 #define MSG_INFO_PSU                        _UxGT("Alimentatore")
 
+#define MSG_DRIVE_STRENGTH                  _UxGT("Potenza Drive")
+#define MSG_DAC_PERCENT                     _UxGT("Driver %")
+#define MSG_DAC_EEPROM_WRITE                _UxGT("Scrivi DAC EEPROM")
+
 #define MSG_FILAMENT_CHANGE_HEADER          _UxGT("CAMBIA FILAMENTO")
 #define MSG_FILAMENT_CHANGE_OPTION_HEADER   _UxGT("CAMBIA OPZIONI:")
 #define MSG_FILAMENT_CHANGE_OPTION_EXTRUDE  _UxGT("Estrusione")
 #define MSG_FILAMENT_CHANGE_OPTION_RESUME   _UxGT("Riprendi stampa")
+
 #if LCD_HEIGHT >= 4
+  // Up to 3 lines allowed
   #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Attendere avvio")
   #define MSG_FILAMENT_CHANGE_INIT_2          _UxGT("del cambio")
   #define MSG_FILAMENT_CHANGE_INIT_3          _UxGT("di filamento")
@@ -238,6 +253,7 @@
   #define MSG_FILAMENT_CHANGE_RESUME_2        _UxGT("la ripresa")
   #define MSG_FILAMENT_CHANGE_RESUME_3        _UxGT("della stampa")
 #else // LCD_HEIGHT < 4
+  // Up to 2 lines allowed
   #define MSG_FILAMENT_CHANGE_INIT_1          _UxGT("Attendere...")
   #define MSG_FILAMENT_CHANGE_UNLOAD_1        _UxGT("Espulsione...")
   #define MSG_FILAMENT_CHANGE_INSERT_1        _UxGT("Inserisci e premi")
